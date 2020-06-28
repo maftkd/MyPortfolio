@@ -9,28 +9,33 @@ ModelImporter:
     100006: Roof
     100008: Cube
     100010: Bookshelf
+    100012: Cylinder
     400000: //RootNode
     400002: Floor
     400004: Gables
     400006: Roof
     400008: Cube
     400010: Bookshelf
+    400012: Cylinder
     2100000: No Name
     2300000: Floor
     2300002: Gables
     2300004: Roof
     2300006: Cube
     2300008: Bookshelf
+    2300010: Cylinder
     3300000: Floor
     3300002: Gables
     3300004: Roof
     3300006: Cube
     3300008: Bookshelf
+    3300010: Cylinder
     4300000: Floor
     4300002: Roof
     4300004: Gables
     4300006: Cube
     4300008: Bookshelf
+    4300010: Cylinder
   externalObjects: {}
   materials:
     importMaterials: 1

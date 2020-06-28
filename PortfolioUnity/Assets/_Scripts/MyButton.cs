@@ -7,7 +7,7 @@ public class MyButton : MonoBehaviour
     MeshRenderer _mesh;
     float _intensity = 4f;
     public AnimationCurve _heightCurve;
-    float _animDur = .4f;
+    float _animDur = .25f;
     bool _clicked = false;
     public Vector3 _downPos;
     // Start is called before the first frame update
@@ -46,7 +46,7 @@ public class MyButton : MonoBehaviour
         Vector3 startPos = transform.localPosition;
         while(timer < _animDur)
         {
-            transform.localPosition = Vector3.Lerp(startPos, _downPos, _heightCurve.Evaluate(timer / _animDur));
+            transform.localPosition = Vector3.LerpUnclamped(startPos, _downPos, _heightCurve.Evaluate(timer / _animDur));
             timer += Time.deltaTime;
             yield return null;
         }

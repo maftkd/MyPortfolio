@@ -45,9 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _book: {fileID: 4470989576533037464, guid: 43b9ff1016e7b5d48a990e1e017b8ba6, type: 3}
   _shelves:
-  - _startPos: {x: 1.434, y: 1.127, z: 2.423}
-    _endPos: {x: 1.434, y: 1.127, z: 0.61}
-  - _startPos: {x: 1.434, y: 0.7, z: 2.423}
-    _endPos: {x: 1.434, y: 0.7, z: 0.61}
-  - _startPos: {x: 1.434, y: 0.2, z: 2.423}
-    _endPos: {x: 1.434, y: 0.2, z: 0.61}
+  - _startPos: {x: 0.41, y: 1.127, z: 0.95}
+    _endPos: {x: 0.41, y: 1.127, z: -0.95}
+  - _startPos: {x: 0.41, y: 0.7, z: 0.95}
+    _endPos: {x: 0.41, y: 0.7, z: -0.95}
+  - _startPos: {x: 0.41, y: 0.2, z: 0.95}
+    _endPos: {x: 0.41, y: 0.2, z: -0.95}
+  _state: 0
