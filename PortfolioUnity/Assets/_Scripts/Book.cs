@@ -32,6 +32,7 @@ public class Book : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("I have been clicked!");
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().BookClicked();
     }
     private void OnMouseExit()
     {

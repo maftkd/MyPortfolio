@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool _instanced = false;
     public Transform _book;
     public Bookshelf[] _shelves;
-    int _booksPerShelf = 20;
+    int _booksPerShelf = 24;
     Transform _bookshelf;
+
+    public enum State { INTRO, ATTIC, BASEMENT };
+    public State _state;
 
     [System.Serializable]
     public struct Bookshelf
@@ -15,20 +20,40 @@ public class GameManager : MonoBehaviour
         public Vector3 _startPos;
         public Vector3 _endPos;
     }
+    private void Awake()
+    {
+        if (!_instanced)
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            _instanced = true;
+        }
+        else
+        {
+            Destroy(transform.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-
-        _bookshelf = GameObject.Find("Books").transform;
-
-        SpawnBooks();
+        Cursor.lockState = CursorLockMode.Locked;        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        switch (_state)
+        {
+            case State.INTRO:
+                _bookshelf = GameObject.Find("Books").transform;
+                SpawnBooks();
+                _state = State.ATTIC;
+                break;
+            case State.ATTIC:
+                break;
+            case State.BASEMENT:
+                break;
+        }
     }
 
     void SpawnBooks()
@@ -42,6 +67,12 @@ public class GameManager : MonoBehaviour
                 book.Rotate(Random.Range(-30f, 30f), 0, 0);
             }
         }
+    }
+
+    public void BookClicked()
+    {
+        SceneManager.LoadScene(1);
+        _state = State.BASEMENT;
     }
 
     private void OnDrawGizmos()

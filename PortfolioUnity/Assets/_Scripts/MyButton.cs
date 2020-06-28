@@ -1,0 +1,55 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MyButton : MonoBehaviour
+{
+    MeshRenderer _mesh;
+    float _intensity = 4f;
+    public AnimationCurve _heightCurve;
+    float _animDur = .4f;
+    bool _clicked = false;
+    public Vector3 _downPos;
+    // Start is called before the first frame update
+    void Start()
+    {
+        _mesh = GetComponent<MeshRenderer>();        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnMouseOver()
+    {
+        _mesh.material.SetColor("_EmissionColor", Color.red*_intensity);
+    }
+
+    private void OnMouseDown()
+    {
+        if (!_clicked)
+            StartCoroutine(ClickButton());
+    }
+
+    private void OnMouseExit()
+    {
+        if(!_clicked)
+            _mesh.material.SetColor("_EmissionColor", Color.black);
+    }
+
+    private IEnumerator ClickButton()
+    {
+        _clicked = true;
+        float timer = 0;
+        Vector3 startPos = transform.localPosition;
+        while(timer < _animDur)
+        {
+            transform.localPosition = Vector3.Lerp(startPos, _downPos, _heightCurve.Evaluate(timer / _animDur));
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        transform.localPosition = startPos;        
+    }
+}

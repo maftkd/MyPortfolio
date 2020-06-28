@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class FlatCam : MonoBehaviour
 {
+    public static bool _instanced = false;
     public float _baseSpeed;
     public float _mouseSensitivity;
     Quaternion _manualRot;
     public float _rotationLerp;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        if (!_instanced)
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            _instanced = true;
+        }
+        else
+        {
+            Destroy(transform.gameObject);
+        }
+    }
+
     void Start()
     {
         
