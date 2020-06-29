@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     int _booksPerShelf = 24;
     Transform _bookshelf;
 
-    public enum State { INTRO, ATTIC, BASEMENT };
+    public enum State { INTRO, ATTIC, BASEMENT, BRIGHTLINE, FREELANCE };
     public State _state;
 
     [System.Serializable]
