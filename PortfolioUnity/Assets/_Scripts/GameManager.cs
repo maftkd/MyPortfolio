@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public enum State { INTRO, ATTIC, BASEMENT, BRIGHTLINE, FREELANCE };
     public State _state;
 
+    public Color _exhibitColor;
+    public Color _atticColor;
+
     [System.Serializable]
     public struct Bookshelf
     {
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
             case State.INTRO:
                 _bookshelf = GameObject.Find("Books").transform;
                 SpawnBooks();
+                SetBGColor(_atticColor);
                 _state = State.ATTIC;
                 break;
             case State.ATTIC:
@@ -73,6 +77,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         _state = State.BASEMENT;
+        SetBGColor(_exhibitColor);
+    }
+
+    private void SetBGColor(Color c)
+    {
+        Camera.main.backgroundColor = c;
     }
 
     private void OnDrawGizmos()

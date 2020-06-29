@@ -10,6 +10,10 @@ ModelImporter:
     100008: Cube
     100010: Bookshelf
     100012: Cylinder
+    100014: Circle
+    100016: Window
+    100018: CandleTable
+    100020: Candle
     400000: //RootNode
     400002: Floor
     400004: Gables
@@ -17,25 +21,45 @@ ModelImporter:
     400008: Cube
     400010: Bookshelf
     400012: Cylinder
+    400014: Circle
+    400016: Window
+    400018: CandleTable
+    400020: Candle
     2100000: No Name
+    2100002: WindowFrame
+    2100004: Glass
+    2100006: CandleHolder
+    2100008: Candle
     2300000: Floor
     2300002: Gables
     2300004: Roof
     2300006: Cube
     2300008: Bookshelf
     2300010: Cylinder
+    2300012: Circle
+    2300014: Window
+    2300016: CandleTable
+    2300018: Candle
     3300000: Floor
     3300002: Gables
     3300004: Roof
     3300006: Cube
     3300008: Bookshelf
     3300010: Cylinder
+    3300012: Circle
+    3300014: Window
+    3300016: CandleTable
+    3300018: Candle
     4300000: Floor
     4300002: Roof
     4300004: Gables
     4300006: Cube
     4300008: Bookshelf
     4300010: Cylinder
+    4300012: Circle
+    4300014: Window
+    4300016: CandleTable
+    4300018: Candle
   externalObjects: {}
   materials:
     importMaterials: 1
