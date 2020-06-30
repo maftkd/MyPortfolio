@@ -8,7 +8,7 @@ public class iWallController : MonoBehaviour
     MeshRenderer _mesh;
     public float _minLocalX, _maxLocalX;
     public float _minTexOff, _maxTexOff;
-    bool _left;
+    bool _left=true;
     public float _moveSpeed;
     // Start is called before the first frame update
     void Start()

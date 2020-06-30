@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickBehaviour : StateMachineBehaviour
 {
     bool _particlePlayed;
+    public float _playTime;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -14,7 +15,7 @@ public class PickBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(!_particlePlayed && stateInfo.normalizedTime > .32f)
+        if(!_particlePlayed && stateInfo.normalizedTime > _playTime)
         {
             Debug.Log("Play particles here");
             animator.transform.GetComponent<ParticleSystem>().Play();
