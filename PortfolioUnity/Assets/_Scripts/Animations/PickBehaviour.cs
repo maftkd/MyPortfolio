@@ -17,7 +17,6 @@ public class PickBehaviour : StateMachineBehaviour
     {
         if(!_particlePlayed && stateInfo.normalizedTime > _playTime)
         {
-            Debug.Log("Play particles here");
             animator.transform.GetComponent<ParticleSystem>().Play();
             _particlePlayed = true;
         }
