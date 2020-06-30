@@ -10,6 +10,8 @@ ModelImporter:
     400002: //RootNode
     400004: Stand
     2100000: No Name
+    2100002: Material
+    2100004: Material.001
     2300000: Monitor
     2300002: Stand
     3300000: Monitor
