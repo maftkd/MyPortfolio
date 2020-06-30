@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 047189916f1f84441b70dfee1270aa91
+guid: 2e0c5c783c9df7249b4e0fa8ae71e3c5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Banner
     100002: Frame
-    100004: //RootNode
-    100006: Monitor
+    100004: Monitor
+    100006: //RootNode
     400000: Banner
     400002: Frame
-    400004: //RootNode
-    400006: Monitor
-    2100000: No Name
-    2100002: Material.001
-    2100004: Material
-    2100006: Material.002
+    400004: Monitor
+    400006: //RootNode
+    2100000: Material.001
+    2100002: Material
+    2100004: Material.002
+    2100006: No Name
     2300000: Banner
     2300002: Frame
     2300004: Monitor

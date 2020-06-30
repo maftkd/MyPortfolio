@@ -39,8 +39,7 @@ public class MyButton : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if(!_clicked)
-            _mesh.material.SetColor("_EmissionColor", Color.black);
+        _mesh.material.SetColor("_EmissionColor", Color.black);
     }
 
     private IEnumerator ClickButton()
@@ -54,6 +53,7 @@ public class MyButton : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        transform.localPosition = startPos;        
+        transform.localPosition = startPos;
+        _clicked = false;
     }
 }
