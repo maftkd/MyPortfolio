@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MyButton : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class MyButton : MonoBehaviour
     float _animDur = .25f;
     bool _clicked = false;
     public Vector3 _downPos;
+
+    public UnityEvent _OnClick;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class MyButton : MonoBehaviour
     {
         if (!_clicked)
             StartCoroutine(ClickButton());
+        _OnClick.Invoke();
     }
 
     private void OnMouseExit()

@@ -16,6 +16,8 @@ ModelImporter:
     400008: Monitor.001
     400010: PC
     2100000: No Name
+    2100002: Frame
+    2100004: Screen
     2300000: Desk
     2300002: Keyboard
     2300004: Monitor
