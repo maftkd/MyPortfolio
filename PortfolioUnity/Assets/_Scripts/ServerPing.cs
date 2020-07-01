@@ -42,7 +42,7 @@ public class ServerPing : MonoBehaviour
             if (www.responseCode == 200)
             {
                 float diff = (Time.time - t)*1000;
-                Debug.Log("ping: " + diff);
+                _display.text = diff.ToString("#") + "\nms";
             }
         }
         _ping = false;

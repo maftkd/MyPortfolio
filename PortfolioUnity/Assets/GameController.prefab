@@ -52,3 +52,13 @@ MonoBehaviour:
   - _startPos: {x: 0.41, y: 0.2, z: 0.95}
     _endPos: {x: 0.41, y: 0.2, z: -0.95}
   _state: 0
+  _exhibitColor: {r: 1, g: 1, b: 1, a: 1}
+  _atticColor: {r: 0.0045389733, g: 0.19596756, b: 0.3207547, a: 1}
+  _exhibitClearFlags: 2
+  _atticClearFlags: 1
+  _bookMats:
+  - {fileID: 2100000, guid: 56f2c3e5c4a73394db950aee54e1cdf6, type: 2}
+  - {fileID: 2100000, guid: f20a5267f0f772b498db04bcfebb5ace, type: 2}
+  - {fileID: 2100000, guid: 840117262b7728b46a8717c729a33c81, type: 2}
+  - {fileID: 2100000, guid: 92d2c4daa485c1845a8593ff8fc2afd9, type: 2}
+  _bookSeed: 147

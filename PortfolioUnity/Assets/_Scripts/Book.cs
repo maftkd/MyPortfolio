@@ -10,7 +10,7 @@ public class Book : MonoBehaviour
     void Start()
     {
         _restX = transform.position.x;
-        _activeX = _restX - .1f;
+        _activeX = _restX - .15f;
         _bod = GetComponent<Rigidbody>();
     }
 
@@ -32,7 +32,7 @@ public class Book : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("I have been clicked!");
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().BookClicked();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().BookClicked(transform);
     }
     private void OnMouseExit()
     {

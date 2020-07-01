@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Splash.unity
+    guid: 29b02e9326a870b44808191c1b262366
+  - enabled: 1
     path: Assets/Scenes/Attic.unity
     guid: 89b4fd9672408c6449d8fabb07cd109a
   - enabled: 1
     path: Assets/Scenes/Basement.unity
     guid: 4f7466c14140c2548b0520122aa8a2da
+  - enabled: 1
+    path: Assets/Scenes/Brightline.unity
+    guid: f6c9c5bf4a813de4b923d7ed35e80d3b
+  - enabled: 1
+    path: Assets/Scenes/Freelance.unity
+    guid: c9eb1bbaa2f7d984b920e8f982e11c1f
   m_configObjects: {}
