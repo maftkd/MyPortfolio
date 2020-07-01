@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlatCam : MonoBehaviour
 {
@@ -87,6 +88,12 @@ public class FlatCam : MonoBehaviour
         transform.position = unclamped;
         GetRotateInput();
         transform.rotation = Quaternion.Slerp(transform.rotation, _manualRot, _rotationLerp * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RawImage cursor = transform.GetChild(0).GetChild(0).GetComponent<RawImage>();
+            cursor.enabled = !cursor.enabled;
+        }
     }
 
     private void GetRotateInput()

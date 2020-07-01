@@ -16,6 +16,10 @@ ModelImporter:
     400008: pick-axe
     400010: Rock
     2100000: No Name
+    2100002: Rock
+    2100004: Gold
+    2100006: Material
+    2100008: Material.001
     2300000: gold1
     2300002: gold2
     2300004: gold3

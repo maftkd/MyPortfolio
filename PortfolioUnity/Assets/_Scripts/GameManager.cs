@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
 
     public int _bookSeed;
     bool _basementUnlocked = true;
-    bool _brightlineUnlocked = true;
-    bool _freelanceUnlocked = true;
+    bool _brightlineUnlocked = false;
+    bool _freelanceUnlocked = false;
 
     public float _sceneChangeDur;
     public float _sceneChangeDelay;
@@ -50,23 +50,22 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
+    {        
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-#if UNITY_EDITOR
+        //no checkin
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().buildIndex==0)
         {
             SceneManager.LoadScene(1);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
-#endif
     }
 
     void OnSceneLoaded(Scene s, LoadSceneMode m)

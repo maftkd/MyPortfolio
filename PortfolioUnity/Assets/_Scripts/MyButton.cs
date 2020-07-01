@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class MyButton : MonoBehaviour
 {
     MeshRenderer _mesh;
-    float _intensity = 4f;
+    float _intensity = 2f;
     public AnimationCurve _heightCurve;
     float _animDur = .25f;
     bool _clicked = false;

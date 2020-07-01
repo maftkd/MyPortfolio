@@ -90,6 +90,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _downPos: {x: 0, y: -0.03, z: 0}
+  _OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6665302654753441892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 147a5b80f41a6d446a32d67bc923b0ca, type: 2}
+    - target: {fileID: 2300002, guid: 30588d2aebe5ede4c9698751a0056024, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 705758904f2be774084a52d3deb93a42, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30588d2aebe5ede4c9698751a0056024, type: 3}
 --- !u!4 &6665302654753313510 stripped
