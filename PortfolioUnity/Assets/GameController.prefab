@@ -62,3 +62,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 840117262b7728b46a8717c729a33c81, type: 2}
   - {fileID: 2100000, guid: 92d2c4daa485c1845a8593ff8fc2afd9, type: 2}
   _bookSeed: 147
+  _sceneChangeDur: 3
+  _sceneChangeDelay: 2

@@ -26,6 +26,8 @@ public class FlatCam : MonoBehaviour
     public Vector2 _zClampFreelance;
     // Start is called before the first frame update
 
+    public bool _moveEnabled = true;
+
     private void Awake()
     {
         if (!_instanced)
@@ -54,25 +56,28 @@ public class FlatCam : MonoBehaviour
         flatForward.Normalize();
         flatRight.Normalize();
         Vector3 movement = Vector3.zero;
-        if (Input.GetKey(KeyCode.W))
+        if (_moveEnabled)
         {
-            //transform.position += flatForward * _baseSpeed * Time.deltaTime;
-            movement += flatForward;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            //transform.position -= flatRight * _baseSpeed * Time.deltaTime;
-            movement -= flatRight;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            //transform.position -= flatForward * _baseSpeed * Time.deltaTime;
-            movement -= flatForward;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            //transform.position += flatRight * _baseSpeed * Time.deltaTime;
-            movement += flatRight;
+            if (Input.GetKey(KeyCode.W))
+            {
+                //transform.position += flatForward * _baseSpeed * Time.deltaTime;
+                movement += flatForward;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                //transform.position -= flatRight * _baseSpeed * Time.deltaTime;
+                movement -= flatRight;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                //transform.position -= flatForward * _baseSpeed * Time.deltaTime;
+                movement -= flatForward;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                //transform.position += flatRight * _baseSpeed * Time.deltaTime;
+                movement += flatRight;
+            }
         }
         movement.Normalize();
         transform.position += _baseSpeed * movement * Time.deltaTime;

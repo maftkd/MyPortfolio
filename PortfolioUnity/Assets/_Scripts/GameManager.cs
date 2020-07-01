@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ChangeScene(Transform b)
     {
+        Camera.main.transform.GetComponent<FlatCam>()._moveEnabled = false;
         Transform radiant = GameObject.Find("Radiate").transform;
         CanvasGroup fader = Camera.main.transform.GetChild(0).GetComponentInChildren<CanvasGroup>();
         radiant.position = b.position-Vector3.right*.1f;
@@ -147,11 +148,47 @@ public class GameManager : MonoBehaviour
         }
         fader.alpha = 1;
         SceneManager.LoadScene(b.tag);
+        Camera.main.transform.GetComponent<FlatCam>()._moveEnabled = true;
         timer = 0;
         while (timer < _sceneChangeDur)
         {
             float frac = timer / _sceneChangeDur;
             fader.alpha = 1-frac * frac;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        fader.alpha = 0;
+    }
+
+    public void LeaveScene(string name)
+    {
+        if (name == "Basement")
+            _brightlineUnlocked = true;
+        else if (name == "Brightline")
+            _freelanceUnlocked = true;
+        StartCoroutine(SceneReturn());
+    }
+
+    IEnumerator SceneReturn()
+    {
+        Camera.main.transform.GetComponent<FlatCam>()._moveEnabled = false;
+        CanvasGroup fader = Camera.main.transform.GetChild(0).GetComponentInChildren<CanvasGroup>();
+        float timer = 0;
+        while (timer < _sceneChangeDur)
+        {
+            float frac = timer / _sceneChangeDur;
+            fader.alpha = frac * frac;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        fader.alpha = 1;
+        SceneManager.LoadScene("Attic");
+        Camera.main.transform.GetComponent<FlatCam>()._moveEnabled = true;
+        timer = 0;
+        while (timer < _sceneChangeDur)
+        {
+            float frac = timer / _sceneChangeDur;
+            fader.alpha = 1 - frac * frac;
             timer += Time.deltaTime;
             yield return null;
         }
