@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(1);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            transform.GetChild(0).GetComponent<AudioSource>().Play();
         }
     }
 
@@ -131,6 +132,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ChangeScene(Transform b)
     {
+        GetComponent<AudioSource>().Play();
         Camera.main.transform.GetComponent<FlatCam>()._moveEnabled = false;
         Transform radiant = GameObject.Find("Radiate").transform;
         CanvasGroup fader = Camera.main.transform.GetChild(0).GetComponentInChildren<CanvasGroup>();
@@ -170,6 +172,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SceneReturn()
     {
+        transform.GetChild(0).GetComponent<AudioSource>().Play();
         Camera.main.transform.GetComponent<FlatCam>()._moveEnabled = false;
         CanvasGroup fader = Camera.main.transform.GetChild(0).GetComponentInChildren<CanvasGroup>();
         float timer = 0;

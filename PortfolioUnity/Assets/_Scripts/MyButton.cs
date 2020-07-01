@@ -45,6 +45,7 @@ public class MyButton : MonoBehaviour
     private IEnumerator ClickButton()
     {
         _clicked = true;
+        GetComponent<AudioSource>().Play();
         float timer = 0;
         Vector3 startPos = transform.localPosition;
         while(timer < _animDur)
